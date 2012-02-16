@@ -64,7 +64,7 @@ close ($sock);
 my $config = ( defined $ARGV[0] and $ARGV[0] eq "config" );
 
 
-$0 =~ s/(.+)redis_//g;
+$0 =~ s/(.+)redis_10005_//g;
 
 switch ($0) {
     case "connected_clients" {
