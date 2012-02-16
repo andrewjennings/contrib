@@ -24,7 +24,7 @@ use Redis;
 use Time::HiRes qw( gettimeofday tv_interval );
 
 my $HOST = exists $ENV{'host'} ? $ENV{'host'} : "127.0.0.1";
-my $PORT = exists $ENV{'port'} ? $ENV{'port'} : 6379;
+my $PORT = exists $ENV{'port'} ? $ENV{'port'} : 5000;
 
 my $server = "$HOST:$PORT";
 my $r = Redis->new( server => sprintf("%s:%d", $HOST, $PORT) );
@@ -49,7 +49,7 @@ if ( $config ) {
     print "ping.label PING time\n";
     print "get.label GET time\n";
     print "set.label SET time\n";
-    print "graph_category redis_6379\n";
+    print "graph_category redis_5000\n";
     exit 0;
 }
 

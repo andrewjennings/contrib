@@ -34,7 +34,7 @@ use IO::Socket::INET;
 use Switch;
 
 my $HOST = exists $ENV{'host'} ? $ENV{'host'} : "127.0.0.1";
-my $PORT = exists $ENV{'port'} ? $ENV{'port'} : 6379;
+my $PORT = exists $ENV{'port'} ? $ENV{'port'} : 10011;
 my $PASSWORD = exists $ENV{'password'} ? $ENV{'password'} : undef;
 
 my $server = "$HOST:$PORT";
@@ -72,7 +72,7 @@ switch ($0) {
             print "graph_title Connected clients\n";
             print "graph_vlabel Connected clients\n";
             print "connected_clients.label connected clients\n";
-            print "graph_category redis_6379\n";
+            print "graph_category redis_10011\n";
             exit 0;
         }
 
@@ -84,7 +84,7 @@ switch ($0) {
         if ( $config ) {
             print "graph_title Per second\n";
             print "graph_vlabel per \${graph_period}\n";
-            print "graph_category redis_6379\n";
+            print "graph_category redis_10011\n";
             print "requests.label requests\n";
             print "requests.type COUNTER\n";
             print "connections.label connections\n";
@@ -102,7 +102,7 @@ switch ($0) {
             print "graph_title Used memory\n";
             print "graph_vlabel Used memory\n";
             print "used_memory.label used memory\n";
-            print "graph_category redis_6379\n";
+            print "graph_category redis_10011\n";
             exit 0;
         }
 
@@ -120,7 +120,7 @@ switch ($0) {
         if ( $config ) {
             print "graph_title Used keys\n";
             print "graph_vlabel Used keys\n";
-            print "graph_category redis_6379\n";
+            print "graph_category redis_10011\n";
 
             foreach my $db (keys %{$dbs}) {
                 printf "%s_keys.label %s keys\n", $db, $db;
